@@ -23,7 +23,10 @@ urlpatterns = [
     path('', include('home.urls')),
     path('credentials/', include('credentials.urls')),
     path('contact/', include('contact.urls')),
-    path('facilities/', include('facilities.urls'))
+    path('facilities/', include('facilities.urls')),
+    path('admission/', include('admission.urls')),
+    path('academics', include('academics.urls')),
+    path('administration', include('administration.urls'))
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

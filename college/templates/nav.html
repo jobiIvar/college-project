@@ -15,10 +15,10 @@
     Administration
   </a>
   <ul class="dropdown-menu dropdown-menu-dark">
-    <li><a class="dropdown-item" href="#">Principal</a></li>
-    <li><a class="dropdown-item" href="#">Correspondent</a></li>
+    <li><a class="dropdown-item" href="{% url 'administration:administration' %}">Principal</a></li>
+    <li><a class="dropdown-item" href="{% url 'administration:administration' %}">Correspondent</a></li>
       <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Administrative Board</a></li>
+    <li><a class="dropdown-item" href="{% url 'administration:administration' %}">Administrative Board</a></li>
   </ul>
 </div>
       </li>
@@ -28,10 +28,10 @@
     Academics
   </a>
   <ul class="dropdown-menu dropdown-menu-dark">
-    <li><a class="dropdown-item" href="#">Courses</a></li>
-    <li><a class="dropdown-item" href="#">Departments</a></li>
+    <li><a class="dropdown-item" href="{% url 'academics:academics' %}">Courses</a></li>
+    <li><a class="dropdown-item" href="{% url 'academics:academics' %}">Departments</a></li>
       <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Rank Holders</a></li>
+    <li><a class="dropdown-item" href="{% url 'academics:academics' %}">Rank Holders</a></li>
   </ul>
 </div>
       </li>
@@ -41,10 +41,11 @@
     Admission
   </a>
   <ul class="dropdown-menu dropdown-menu-dark">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="{% url 'admission:admission' %}">UG</a></li>
+    <li><a class="dropdown-item" href="{% url 'admission:admission' %}">PG</a></li>
       <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
+      <li><a class="dropdown-item" href="{% url 'admission:admission' %}">M.Phil</a></li>
+    <li><a class="dropdown-item" href="{% url 'admission:admission' %}">Ph.D</a></li>
   </ul>
 </div>
       </li>
@@ -66,17 +67,17 @@
     Facilities
   </a>
   <ul class="dropdown-menu dropdown-menu-dark">
-    <li><a class="dropdown-item" href="#">Library</a></li>
-    <li><a class="dropdown-item" href="#">Labs</a></li>
-    <li><a class="dropdown-item" href="#">Smart Classrooms</a></li>
+    <li><a class="dropdown-item" href="{% url 'facilities:all' %}">Library</a></li>
+    <li><a class="dropdown-item" href="{% url 'facilities:all' %}">Labs</a></li>
+    <li><a class="dropdown-item" href="{% url 'facilities:all' %}">Smart Classrooms</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="#">Indoor & Outdoor Sports</a> </li>
+      <li><a class="dropdown-item" href="{% url 'facilities:all' %}">Indoor & Outdoor Sports</a> </li>
   </ul>
 </div>
       </li>
 
       <li class="nav-item active">
-        <a class="nav-link" href="{% url 'home:home' %}">Contact <span class="sr-only"></span></a>
+        <a class="nav-link" href="{% url 'contact:contact' %}">Contact <span class="sr-only"></span></a>
       </li>
     </ul>
     <div class="nav-sign">

@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     'administration',
     'contact',
     'credentials',
-    'examination',
-    'facilities'
+    'facilities',
+    'academics'
 ]
 
 MIDDLEWARE = [
