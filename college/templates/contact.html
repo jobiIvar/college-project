@@ -1,7 +1,28 @@
 {% extends 'base.html' %}
 {% block content %}
 {% load static %}
-<h1>I am Contact Page</h1>
+<div class="contact_container">
+    <div class="contact_form_container">
+        <div>
+            <h3>Contact Form</h3>
+        </div>
+        <form method="POST">
+          {% csrf_token %}
+            <div>
+                <input type="text" name="name" placeholder="Enter Your Name">
+            </div>
+            <div>
+                <input type="email" name="email" placeholder="Enter Your Email">
+            </div>
+            <div>
+                <input type="number" name="phone_number" placeholder="Enter Your Phone Number">
+            </div>
+            <div>
+                <textarea name="message" placeholder="Enter Your Name"></textarea>
+            </div>
+        </form>
+    </div>
+</div>
 
 
 {% endblock %}

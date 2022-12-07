@@ -10,9 +10,13 @@
 #navbarNavDropdown{
     justify-content:space-between !important;
 }
+body{
+color:#000;
+}
 .navbar {
     display:flex;
     justify-content: space-between;
+    background-color:#4b4753;
 }
 
 .banner{
@@ -30,6 +34,9 @@ body{
     height:35px;
     margin-left:10px
 
+}
+.signBtn a:hover{
+    text-decoration:none;
 }
 /* All Same */
 a {
@@ -120,4 +127,18 @@ footer p {
 .social_container {
     display: flex;
     justify-content:space-between;
+}
+
+/* Contact html
+.contact_container{
+
+}
+*/
+.contact_container {
+    width: 35rem;
+    height:40rem;
+    margin:auto;
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    background-color:#9c7bc6;
 }

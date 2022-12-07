@@ -26,7 +26,8 @@ urlpatterns = [
     path('facilities/', include('facilities.urls')),
     path('admission/', include('admission.urls')),
     path('academics', include('academics.urls')),
-    path('administration', include('administration.urls'))
+    path('administration', include('administration.urls')),
+    path('aboutus/', include('aboutus.urls'))
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

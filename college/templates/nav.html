@@ -1,5 +1,5 @@
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+<nav class="navbar navbar-expand-lg navbar-light bg-secondary">
   <a class="navbar-brand" href="{% url 'home:home' %}"><img class="img_logo" src="{% static 'img/logo.png' %}"></a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -79,10 +79,13 @@
       <li class="nav-item active">
         <a class="nav-link" href="{% url 'contact:contact' %}">Contact <span class="sr-only"></span></a>
       </li>
+        <li class="nav-item active">
+        <a class="nav-link" href="{% url 'aboutus:about' %}">About <span class="sr-only"></span></a>
+      </li>
     </ul>
     <div class="nav-sign">
-    <a onclick="cancel()" href="{% url 'credentials:signin' %}" class="btn btn-success">Login</a>
-    <a href="{% url 'credentials:signup' %}" class="registerBtn btn btn-warning">Register</a>
+    <a onclick="cancel()" href="{% url 'credentials:signin' %}" class="signBtn btn btn-success">Login</a>
+    <a href="{% url 'credentials:signup' %}" class="signBtn btn btn-warning">Register</a>
   </div>
   </div>
 
