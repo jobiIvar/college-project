@@ -3,22 +3,23 @@
 {% load static %}
 <div class="contact_container">
     <div class="contact_form_container">
-        <div>
-            <h3>Contact Form</h3>
-        </div>
-        <form method="POST">
+        <div><h2>Contact Form</h2></div>
+        <form class="contact_form" method="POST">
           {% csrf_token %}
-            <div>
-                <input type="text" name="name" placeholder="Enter Your Name">
+            <div class="contact_input_field">
+                <input class="contact_input" type="text" name="name" placeholder="Enter Your Name">
             </div>
             <div>
-                <input type="email" name="email" placeholder="Enter Your Email">
+                <input class="contact_input" type="email" name="email" placeholder="Enter Your Email">
             </div>
             <div>
-                <input type="number" name="phone_number" placeholder="Enter Your Phone Number">
+                <input class="contact_input" type="number" name="phone_number" placeholder="Enter Your Phone Number">
             </div>
             <div>
-                <textarea name="message" placeholder="Enter Your Name"></textarea>
+                <textarea class="contact_textarea" name="message" placeholder="Enter Your Name"></textarea>
+            </div>
+            <div>
+                <button class="send_btn btn btn-success">Send</button>
             </div>
         </form>
     </div>
