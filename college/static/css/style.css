@@ -1,9 +1,12 @@
 /* Variables */
 :root {
-    --violet:#6C4AB6;
+    --violet:#472183;
     --peach : #CE7777;
     --grey:#E8C4C4;
     --cold : #B9E0FF;
+    --white: #F1F6F5;
+    --blue:#4B56D2;
+    --light_blue:#82C3EC;
 
 }
 /* Nav bar  */
@@ -16,7 +19,10 @@ color:#000;
 .navbar {
     display:flex;
     justify-content: space-between;
-    background-color:#4b4753;
+    background-color:#4B56D2;
+}
+.navbar a{
+    color:whitesmoke;
 }
 
 .banner{
@@ -59,7 +65,7 @@ a:hover {
     margin-top:5rem;
     height: 20rem;
     width: 20rem;
-    background-color: whitesmoke;
+    background-color: #F1F6F5;
     padding:1rem;
     display:flex;
     justify-content: center;
@@ -93,7 +99,7 @@ margin-left: 1rem;
     margin-top:5rem;
     height: 30rem;
     width: 23rem;
-    background-color: #f1ebeb;
+    background-color: #F1F6F5;
     padding:1rem;
     display:flex;
     justify-content: center;
@@ -141,7 +147,7 @@ footer p {
     margin:auto;
     margin-top: 6rem;
     margin-bottom: 4rem;
-    background-color:#f1ebeb;
+    background-color:#F1F6F5;
     padding-bottom: 10px;
     display:flex;
     align-items:center;
@@ -215,7 +221,291 @@ text-align:center;
 /* #### -- Facilities -- ####   */
 .facility_container{
    margin:5px;
-
+}
+.my_facility_contain {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    margin:2rem;
 
 }
+.my_facility_contain h3 {
+    color:#000;
+}
+.my_facility_contain .card {
+    background-color:var(--blue);
+    border:5px solid var(--violet);
+    color: var(--white);
+}
+.my_facility_contain hr {
+    margin-top:5px;
+    border-top: 5px solid var(--violet);
+}
+.facility_page_container .title {
+    background-color:var(--violet);
+    font-size:2rem;
+    padding:5px;
+    text-align:center;
+    color:var(--white);
+}
 
+/* -- ## Academics ## -- */
+
+.department_container {
+    margin:auto;
+    margin-top:2rem;
+    background-color:#4B56D2;
+    color:#fff;
+    height:auto;
+    width:25vw;
+
+}
+.department_container h2 {
+    background-color:#472183;
+    color:var(--white);
+    text-align:center;
+
+}
+.department_container li {
+        text-align:justify;
+        font-size:1.2rem;
+
+}
+.department_container li:hover {
+    color:black;
+    font-weight:bold;
+}
+.department {
+    padding:1rem;
+}
+ul,ol {
+    list-style-type:none;
+}
+.course_container {
+    background-color:var(--blue);
+    color:black;
+    margin:auto;
+    margin-top:2rem;
+    height:auto;
+    width:25vw;
+    font-size:1.3rem;
+}
+.course_container h3 {
+    background-color:var(--violet);
+    color:var(--white);
+    text-align:center;
+}
+.courses {
+    padding:1rem;
+}
+
+.rank_holder_card {
+    margin:2rem;
+}
+.rank_holders_container h3{
+    background-color:var(--violet);
+    color:var(--white);
+    padding:0.8rem;
+    text-align:center;
+
+}
+.ranks {
+    padding:2rem;
+}
+.univ_players_container h3 {
+    text-align:center;
+    color:#F1F6F5;
+    background-color:#472183;
+    font-size:2rem;
+}
+.university_players {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.university_players .card {
+    margin-left : 1.5rem;
+    margin-top : 1rem;
+    text-align:center;
+    background-color:var(--blue)
+}
+/* ---## Administration ##--- */
+.my_admin h1{
+    background-color:var(--violet);
+    color:var(--white);
+    text-align:center;
+    min-height: 60px
+}
+.admin_container {
+    display:flex !important;
+    margin-left:1rem;
+}
+.my_admin_card {
+    margin:1.5rem;
+
+}
+.correspond_container {
+    margin:2rem;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.correspond_container h5 {
+    margin-top:10px;
+}
+.correspond_info {
+    margin-left:1rem;
+}
+.corr_page_container{
+    background-color:#F1F6F5;
+    padding: 10px;
+    height: auto;
+    width: 1000px;
+    margin:auto;
+    margin-top:2rem;
+}
+.principal_container {
+    margin:2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.principal_page_container{
+    background-color:#F1F6F5;
+    padding: 10px;
+    height: auto;
+    width: 1000px;
+    margin:auto;
+    margin-top:2rem;
+}
+.principal_info {
+    margin-left:1rem;
+}
+.principal_info h5 {
+    margin-top:1rem;
+}
+.principal_info .mycard,.correspond_info .mycard {
+    background-color:#472183;
+    color:whitesmoke;
+}
+
+/*####--- Home Page ---#### */
+.news_event {
+    background-color:#F1F6F5;
+    margin: 10px 0px 0px 4rem;
+    border: 5px solid #472183;
+}
+.news_event:hover {
+    background-color:#4B56D2;
+    color:#F1F6F5;
+}
+.event_container{
+    margin:1rem 0px 1.2rem 0px;
+}
+.event_container h3 {
+    text-align:center;
+    background-color:#472183;
+    font-size:2rem;
+    color:#F1F6F5;
+}
+.my_event_row {
+    margin: 0;
+}
+.moto_head {
+    text-align: center !important;
+    background-color: #472183;
+    font-size: 2rem;
+    color: #F1F6F5;
+}
+.moto_container {
+    margin-top:1rem;
+}
+.my_vision_container {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+}
+.my_vision {
+    border-radius:5px;
+    border: 5px solid #472183;
+    margin-left:2rem;
+    margin-right:10px;
+    padding:10px;
+    background-color:#4B56D2;
+    color:whitesmoke;
+}
+.my_vision h4{
+    text-align:center;
+    font-weight:bold;
+    color:black;
+}
+.my_vision:hover {
+    background-color:#F1F6F5;
+    color:#000;
+}
+/* #### --- Achievements and Courses */
+.course_achievement_container h3 {
+    text-align:center;
+    color:#F1F6F5;
+    background-color:#472183;
+    font-size:2rem;
+}
+.course_achievement {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+}
+.ca_class {
+    margin:1rem;
+}
+.ca_class a h4 {
+
+    color:#000;
+}
+.ca_class a:hover {
+    text-decoration:none;
+}
+.ca_class .rank {
+    display:flex;
+    flex-wrap: wrap;
+}
+.ca_class .rank .rankers {
+    flex: 0 0 33.333333%;
+}
+.ca_class .univ_player {
+    display:flex;
+    flex-wrap: wrap;
+}
+.ca_class .univ_player .players {
+    flex: 0 0 50%;
+}
+.ca_class li {
+    font-size:1.2rem;
+}
+/*## highlights Container Style ## */
+.highlights_container {
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+}
+.highlight_content .card {
+    margin:1rem;
+    background-color:#4B56D2;
+    text-align:center;
+}
+.highlight_content .card p {
+    color:#F1F6F5;
+}
+.today_highlights {
+    margin-top:1rem;
+}
+.today_highlights h3 {
+    text-align:center;
+    color:#F1F6F5;
+    background-color:#472183;
+    font-size:2rem;
+}
+.author_name {
+    color:black;
+}
+.today_highlights .card-text {
+    font-size:1.2rem;
+}
+.highlight_content .card {
+    min-height:200px;
+}

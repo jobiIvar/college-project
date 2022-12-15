@@ -2,20 +2,81 @@
 {% block content %}
 {% load static %}
 
-<h1>I am Academics page</h1>
+
 
 {% if department %}
-<div>
-    <h2>Departments</h2>
-    {% for dep in department %}
-    <div>
-        {{ dep.name }}
+<div class="departments">
+    <div class="department_container">
+        <h2>Departments</h2>
+        <div class="department">
+            <ul>
+            {% for dep in department %}
+            <li>{{ dep.name }}</li>
+
+            {% endfor %}
+        </ul>
+        </div>
     </div>
+</div>
+{% elif courses %}
+<div class="course_container">
+    <h3>Courses</h3>
+    <div class="courses">
+        <ul>
+            {% for course in courses %}
+            {% if course.session_name != None %}
+            <li>{{course.course_name.title}} of {{course.session_name.title}} in {{course.department}}</li>
+            {% else %}
+            <li>{{course.course_name.title}} in {{course.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+{% elif rank_holders %}
+<div class="rank_holders_container">
+    <h3>Rank Holders of 2022</h3>
+    <div class="ranks">
+        <div class="row">
+        {% for rank_holder in rank_holders %}
+        <div class="card rank_holder_card shadow" style="width: 18rem;">
+            <img src="{{rank_holder.photo.url}}" class="card-img-top" alt="..." width="170px" height="225px">
+            <div class="card-body">
+                <h5 class="card-title text-center">{{rank_holder.name}}</h5>
+                <ul class="list-group list-group-flush text-center">
+                <li class="list-group-item">{{rank_holder.rank}}</li>
+                <li class="list-group-item">Department: {{rank_holder.department}}</li>
+                <li class="list-group-item">Rank: {{rank_holder.subject}}</li>
+                <li class="list-group-item">{{rank_holder.year}}</li>
+            </ul>
+            </div>
+
+        </div>
     {% endfor %}
+    </div>
+    </div>
+</div>
+{% elif university_players %}
+<div class="univ_players_container">
+    <h3>University Player</h3>
+    <div class="university_players">
+        {% for university_player in university_players %}
+        <div class="card" style="width: 18rem;">
+          <img src="{{university_player.image.url}}" class="card-img-top" alt="..." width="200px" height="200px">
+          <div class="card-body">
+            <h5 class="card-title">{{university_player.name}}</h5>
+            <p class="card-text">{{university_player.sport}}</p>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
 {% else %}
 <div>
     No department
 </div>
 {% endif %}
+
+
 {% endblock %}

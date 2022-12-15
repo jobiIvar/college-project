@@ -16,7 +16,7 @@
                 <input class="contact_input" type="number" name="phone_number" placeholder="Enter Your Phone Number">
             </div>
             <div>
-                <textarea class="contact_textarea" name="message" placeholder="Enter Your Name"></textarea>
+                <textarea class="contact_textarea" name="message" placeholder="Enter Your Messages Here..."></textarea>
             </div>
             <div>
                 <button class="send_btn btn btn-success">Send</button>
@@ -24,6 +24,14 @@
         </form>
     </div>
 </div>
-
+<div>
+    {% for message in messages %}
+    <div class="card bg-dark text-white">
+        <div class="card-body text-center">
+        {{message}}
+        </div>
+    </div>
+    {% endfor %}
+    </div>
 
 {% endblock %}

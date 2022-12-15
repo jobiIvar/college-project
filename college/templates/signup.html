@@ -16,7 +16,7 @@
         <form method="POST">
             {% csrf_token %}
             <div class="input_field">
-                <input class="r_inputs" type="text" placeholder="Enter Your Name" name="name">
+                <input class="r_inputs" type="text" placeholder="Enter Your Username" name="username">
             </div>
             <div class="input_field">
                 <input class="r_inputs" type="email" placeholder="Enter Your Email" name="email">
@@ -28,10 +28,10 @@
                 <input class="r_inputs" type="password" placeholder="Enter Your Password" name="password">
             </div>
             <div class="input_field">
-                <input class="r_inputs" type="password" placeholder="Confirm Your Password" name="cpassword">
+                <input class="r_inputs" type="password" placeholder="Confirm Your Password" name="password1">
             </div>
             <a href="{% url 'home:home' %}"  class="btn btn-warning">Cancel</a>
-            <button class="login_btn btn btn-success">Login</button>
+            <button type="submit" class="login_btn btn btn-success">Signup</button>
 
         </form>
             <div class="login_bottom">
@@ -40,10 +40,19 @@
 
         </div>
 
-
     </div>
 </div>
-
+{% if messages %}
+        <div style="margin:auto">
+            {% for msg in messages %}
+            <div class="text-center card text-white bg-dark">
+                <div class="card-body">
+                    {{msg}}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
     <script src="https://unpkg.com/sweetalert2@7.8.2/dist/sweetalert2.all.js"></script>
     <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/propper.min.js' %}" ></script>

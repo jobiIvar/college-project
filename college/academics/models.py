@@ -30,7 +30,7 @@ class Courses(models.Model):
     COMMERCE = "Commerce"
     BUSINESS = "BUSINESS"
     session_choice = (
-        (ARTS,"Arts"),
+        (ARTS, "Arts"),
         (SCIENCE, "Science"),
         (COMMERCE, "Commerce"),
         (BUSINESS, "Business")
@@ -49,3 +49,32 @@ class Courses(models.Model):
 
         else:
             return f"{self.course_name} of {self.session_name} in {self.department}".upper()
+
+
+class RankHolder(models.Model):
+    name = models.CharField(max_length=100)
+    photo = models.ImageField(upload_to='rank_holders')
+    rank = models.CharField(max_length=50)
+    subject = models.CharField(max_length=100)
+    department = models.ForeignKey("Department", on_delete=models.CASCADE)
+    year = models.IntegerField()
+
+    class Meta:
+        verbose_name = "Rank Holder"
+        verbose_name_plural = "Rank Holders"
+
+    def __str__(self):
+        return f"{self.name} - {self.department}"
+
+
+class UniversityPlayer(models.Model):
+    name = models.CharField(max_length=50)
+    sport = models.CharField(max_length=50)
+    image = models.ImageField(upload_to='univ_player/')
+
+    class Meta:
+        verbose_name = "University Player"
+        verbose_name_plural = "University Players"
+
+    def __str__(self):
+        return f"{self.name} - {self.sport}"

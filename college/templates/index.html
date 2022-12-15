@@ -2,9 +2,118 @@
 {% block content %}
 {% load static %}
 <div class="banner-container">
-    <img class="banner" src="{% static 'img/banner.png' %}" alt="Banner Image">
+    <img class="banner" src="{% static 'img/collegeBanner.png' %}" alt="Banner Image">
+</div>
+<div class="today_highlights">
+    <h3>Today's Highlights</h3>
+    <div class="highlights_container">
+        <div class="highlight_content daily_quote">
+            <div class="card">
+              <div class="card-body">
+                  <h4 class="card-title">Quotes</h4>
+                <blockquote class="blockquote mb-0">
+                  <p>“If there is no struggle, there is no progress.”</p>
+                  <div class="author_name">by <cite title="Source Title">Frederick Douglass</cite></div>
+                </blockquote>
+              </div>
+            </div>
+        </div>
+        <div class="highlight_content announcements">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Announcements</h4>
+                    {% for announcement in announcements %}
+                    <p class="card-text">{{announcement.text}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="highlight_content notifications">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Notification</h4>
+                    {% for notification in notifications %}
+                    <p class="card-text">{{notification.text}}</p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="course_achievement_container">
+    <h3>Achievement & We Offer</h3>
+    <div class="course_achievement">
+        <div class="ca_class">
+            <h4>Bachelor to Doctorate in</h4>
+            <a href="{% url 'academics:academics' %}">
+                <ul>
+                {% for department in departments %}
+                <li>{{department.name}}</li>
+                {% endfor %}
+            </ul>
+            </a>
+        </div>
+        <div class="ca_class">
+            <a href="{% url 'academics:university_player' %}">
+                <h4 class="text-center">Rank Holders</h4>
+                <div class="univ_player">
+                    {% for univ_player in univ_players %}
+                    <div class="players">
+                        <img src="{{univ_player.image.url}}" width="125px" height="125px">
+                        <h5 class="text-justify">{{univ_player.name}}</h5>
+                    </div>
+                    {% endfor %}
+                </div>
+            </a>
+        </div>
+        <div class="ca_class">
+            <a href="{% url 'academics:rank_holders' %}">
+                <h4 class="text-center">Rank Holders</h4>
+                <div class="rank">
+                    {% for rank_holder in rank_holders %}
+                    <div class="rankers">
+                        <img src="{{rank_holder.photo.url}}" width="100px" height="125px">
+                        <h5 class="text-justify">{{rank_holder.name}}</h5>
+                    </div>
+                    {% endfor %}
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="event_container">
+    <h3>News & Events</h3>
+
+    <div class="row" style="margin:0" >
+        {% for event in events %}
+        <div class="news_event card shadow" style="width: 18rem;">
+          <img src="{{event.image.url}}" class="card-img-top" alt="..." width="200px" height="200px">
+          <div class="card-body">
+            <p class="card-text">{{event.name}}-{{event.year}}</p>
+          </div>
+        </div>
+        {% endfor %}
+    </div>
+<!--    Moto Section-->
+    <div class="moto_container">
+        <div>
+            <div>
+                <h2 class="moto_head">Our Motto : Learn to Lead </h2>
+            </div>
+            <div class="my_vision_container">
+                {% for motto in mottos %}
+                <div class="my_vision">
+                    <h4>{{motto.title}}</h4>
+                    <p>{{motto.description}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 </div>
 
 
+<script>
 
+</script>
 {% endblock %}

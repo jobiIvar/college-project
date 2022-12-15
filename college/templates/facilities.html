@@ -1,35 +1,73 @@
 {% extends 'base.html' %}
 {% block content %}
-<h1>I am facilities page</h1>
-<div class="container">
-  <div class="  row">
-    {% for facility in facilities %}
-    <div class="facility_container col-sm">
 
-        <div class="card" style="width: 18rem;">
-        <img src="{{facility.image_field.url}}" class="card-img-top" width="280px" height="180px">
-        <div class="card-body">
-        <h5 class="card-title">{{facility.name}}</h5>
-        <p class="card-text">{{facility.info}}</p>
+<div class="facility_page_container">
+    {% if labs %}
+        <h3 class="title">Lab Facility</h3>
+        <div class="my_facility_contain">
 
+            {% for lab in labs %}
+            <div class="card" style="width: 18rem;">
+                    <img src="{{lab.image_field.url}}" class="card-img-top" alt="..." width="200px" height="225px">
+                    <h3 class="card-title text-center">{{lab.name}}</h3>
+                <hr>
+                <div class="card-body">
+                    <p class="card-text">{{lab.info}}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
+    {% elif libraries %}
+        <h3 class="title">Library Facility</h3>
+        <div class="my_facility_contain">
 
+            {% for library in libraries %}
+            <div class="card" style="width: 18rem;">
+                    <img src="{{library.image_field.url}}" class="card-img-top" alt="..." width="200px" height="225px">
+                    <h3 class="card-title text-center">{{library.name}}</h3>
+                <hr>
+                <div class="card-body">
+                    <p class="card-text">{{library.info}}</p>
+                </div>
+            </div>
+            {% endfor %}
         </div>
+    {% elif sports %}
+        <h3 class="title">Sport Facility</h3>
+        <div class="my_facility_contain">
 
-    </div>
-  {% endfor %}
+            {% for sport in sports %}
+            <div class="card" style="width: 18rem;">
+                    <img src="{{sport.image_field.url}}" class="card-img-top" alt="..." width="200px" height="225px">
+                    <h3 class="card-title text-center">{{sport.name}}</h3>
+                <hr>
+                <div class="card-body">
+                    <p class="card-text">{{sport.info}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% elif smart_classes %}
+        <h3 class="title">Smart Class Facility</h3>
+        <div class="my_facility_contain">
 
-</div>
+            {% for smart_class in smart_classes %}
+            <div class="card" style="width: 18rem;">
+                    <img src="{{smart_class.image_field.url}}" class="card-img-top" alt="..." width="200px" height="225px">
+                    <h3 class="card-title text-center">{{smart_class.name}}</h3>
+                <hr>
+                <div class="card-body">
+                    <p class="card-text">{{smart_class.info}}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div>
+            <h4>Currently No items</h4>
+        </div>
+    {% endif %}
 </div>
 
 {% endblock %}
 
-<!--  <ul class="list-group list-group-flush">-->
-<!--    <li class="list-group-item">An item</li>-->
-<!--    <li class="list-group-item">A second item</li>-->
-<!--    <li class="list-group-item">A third item</li>-->
-<!--  </ul>-->
-<!--  <div class="card-body">-->
-<!--    <a href="#" class="card-link">Card link</a>-->
-<!--    <a href="#" class="card-link">Another link</a>-->
-<!--  </div>-->

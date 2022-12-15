@@ -2,7 +2,78 @@
 {% block content %}
 {% load static %}
 
-<h1>I am Adminstration page</h1>
+<div>
+    {% if principal_info %}
+    <div class="principal_page_container">
+        {% for info in principal_info %}
+        <div class="principal_container">
+            <div>
+                <img src="{{info.photo.url}}" height="290px" width="230px">
+                <h3 class="text-center">{{info.position}}</h3>
+            </div>
+            <div class="principal_info">
+                <h3>{{info.name}} </h3>
+                <h5>Quotes for Students</h5>
+                <div class="mycard card">
+                  <div class="card-body">
+                    {{info.message}}
+                  </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    {% elif correspondent_info %}
+    <div class="corr_page_container">
+        {% for c_info in correspondent_info %}
+        <div class="correspond_container">
+            <div>
+                <img src="{{c_info.photo.url}}" height="270px" width="220px">
+                <h3 class="text-center">{{c_info.position}}</h3>
+            </div>
+            <div class="correspond_info">
+                <h3>{{c_info.name}}</h3>
+                <h5>Message from {{c_info.position}}</h5>
+                <div class="mycard card">
+                  <div class="card-body">
+                    {{c_info.message}}
+                  </div>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+    </div>
+    {% elif administrative_board %}
+    <div class="my_admin">
+        <h1>Administrative Board Members</h1>
+        <div class="admin_container">
+            {% for admin in administrative_board %}
+
+                <div class="card my_admin_card" style="width: 18rem;" >
+                  <img src="{{admin.photo.url}}" class="card-img-top" alt="..." width="230px" height="290px">
+                  <div class="card-body">
+                    <h5 class="card-title text-center">{{admin.name}}</h5>
+                  </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+</div>
 
 
 {% endblock %}
+<div class="card" style="width: 18rem;">
+  <img src="{{admin.photo.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{admin.name}}</h5>
+  </div>
+</div>
+
+<!-- <div>-->
+<!--    <img src="{{admin.photo.url}}" width="220px" height="270px">-->
+<!--</div>-->
+<!--<div>-->
+<!--    <h3>{{admin.name}}</h3>-->
+<!--</div>-->
