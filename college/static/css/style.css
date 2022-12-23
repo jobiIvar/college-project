@@ -16,6 +16,19 @@
 body{
 color:#000;
 }
+.nav_contact_msg {
+    margin-right: 10px;
+    color: #1a2121;
+}
+.nav_contact_msg: hover {
+    color:var(--white);
+}
+.nav_user_greet {
+    background: #3d7049;
+    margin-right: 5px;
+    color: white;
+    padding: 12px;
+}
 .navbar {
     display:flex;
     justify-content: space-between;
@@ -228,6 +241,17 @@ text-align:center;
     margin:2rem;
 
 }
+.my_facility_contain_library {
+    display:grid;
+    grid=template-columns:1fr 1fr;
+    margin:3rem;
+}
+.my_facility_contain_library .card {
+    background-color:var(--blue);
+    border:5px solid var(--violet);
+    color: var(--white);
+    margin:2rem;
+}
 .my_facility_contain h3 {
     color:#000;
 }
@@ -283,10 +307,12 @@ ul,ol {
 .course_container {
     background-color:var(--blue);
     color:black;
-    margin:auto;
+    /*margin:auto;
+     height:auto;
+    width:auto;*/
     margin-top:2rem;
-    height:auto;
-    width:25vw;
+    margin-bottom:2rem;
+    text-align:center;
     font-size:1.3rem;
 }
 .course_container h3 {
@@ -294,8 +320,14 @@ ul,ol {
     color:var(--white);
     text-align:center;
 }
+.course_container_title {
+    background-color: var(--violet);
+    text-align: center;
+}
 .courses {
-    padding:1rem;
+    margin: auto;
+    text-align: justify;
+    width: 500px;
 }
 
 .rank_holder_card {
@@ -508,4 +540,21 @@ ul,ol {
 }
 .highlight_content .card {
     min-height:200px;
+}
+
+/*#####----- Admission Form -----#####
+.row{
+    margin-left: auto;
+    margin-right: auto;
+} */
+.my_admission_btn{
+    width:250px !important;
+    border-radius: 10px;
+    margin: 10px
+}
+.admission_form_container .row {
+    margin:0;
+}
+.admission_page_title {
+
 }

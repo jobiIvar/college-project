@@ -43,9 +43,15 @@ INSTALLED_APPS = [
     'contact',
     'credentials',
     'facilities',
-    'academics'
+    'academics',
+    'crispy_forms',
+    "crispy_bootstrap5",
+    'rest_framework',
+    'admission.apps.AdmissionConfig'
 ]
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
 
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -87,7 +93,7 @@ DATABASES = {
     }
 }
 
-
+DATE_INPUT_FORMATS = ['%d/%m/%Y']
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -105,7 +111,16 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
+# REST_FRAMEWORK = {
+#     # Use Django's standard `django.contrib.auth` permissions,
+#     # or allow read-only access for unauthenticated users.
+#     'DEFAULT_PERMISSION_CLASSES': [
+#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+#
+#     ],
+#     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+#     'PAGE_SIZE': 10
+# }
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.1/topics/i18n/

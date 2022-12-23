@@ -1,9 +1,16 @@
 from django.contrib.auth.models import User
 from django.contrib import messages, auth
 from django.shortcuts import render, redirect
+from rest_framework import viewsets, permissions
+from credentials.serializers import UserSerializer
 
 
-# Create your views here.
+# # Create your views here.
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
 
 def signin(request):
     if request.method == "POST":
@@ -28,7 +35,7 @@ def signup(request):
         password = request.POST['password']
         c_password = request.POST['password1']
         if (not username) or (not email) or (not password):
-            messages.warning(request,"Enter all the details....")
+            messages.warning(request, "Enter all the details....")
         elif password == c_password:
             if User.objects.filter(username=username).exists():
                 messages.info(request, "Username already exist")
@@ -40,8 +47,11 @@ def signup(request):
                 user = User.objects.create_user(username=username, email=email, password=password)
                 messages.success(request, "User Created")
                 user.save()
-
                 return redirect("credentials:signin")
+        else:
+            messages.warning(request, 'Password not matched')
+            return redirect("credentials:signup")
+
     return render(request, 'signup.html')
 
 

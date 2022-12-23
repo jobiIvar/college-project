@@ -18,16 +18,125 @@
         </div>
     </div>
 </div>
-{% elif courses %}
+{% elif mathematics %}
+<h1 class="course_container_title">Courses Department Wise We Offered</h1>
 <div class="course_container">
-    <h3>Courses</h3>
+    <h3>Mathematics Department</h3>
     <div class="courses">
         <ul>
-            {% for course in courses %}
-            {% if course.session_name != None %}
-            <li>{{course.course_name.title}} of {{course.session_name.title}} in {{course.department}}</li>
+            {% for math in mathematics %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
             {% else %}
-            <li>{{course.course_name.title}} in {{course.department}}</li>
+            <li>{{math.course_name.title}} in {{math.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <h3>Physics Department</h3>
+    <div class="courses">
+        <ul>
+            {% for math in physics %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
+            {% else %}
+            <li>{{math.course_name.title}} in {{math.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <h3>Tamil Department</h3>
+    <div class="courses">
+        <ul>
+            {% for math in tamil %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
+            {% else %}
+            <li>{{math.course_name.title}} in {{math.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <h3>English Department</h3>
+    <div class="courses">
+        <ul>
+            {% for math in english %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
+            {% else %}
+            <li>{{math.course_name.title}} in {{math.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <h3>Commerce Department</h3>
+    <div class="courses">
+        <ul>
+            {% for math in commerce %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
+            {% else %}
+            <li>{{math.course_name.title}} in {{math.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <h3>Business Administration Department</h3>
+    <div class="courses">
+        <ul>
+            {% for math in business_administration %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
+            {% else %}
+            <li>{{math.course_name.title}} in {{math.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <h3>Computer Science Department</h3>
+    <div class="courses">
+        <ul>
+            {% for math in computer_science %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
+            {% else %}
+            <li>{{math.course_name.title}} in {{math.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <h3>Zoology Department</h3>
+    <div class="courses">
+        <ul>
+            {% for math in zoology %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
+            {% else %}
+            <li>{{math.course_name.title}} in {{math.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <h3>Social Works Department</h3>
+    <div class="courses">
+        <ul>
+            {% for math in social_works %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
+            {% else %}
+            <li>{{math.course_name.title}} in {{math.department}}</li>
+            {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <h3>Physical Education Department</h3>
+    <div class="courses">
+        <ul>
+            {% for math in physical_education %}
+            {% if math.session_name != None %}
+            <li>{{math.course_name.title}} of {{math.session_name.title}} in {{math.department}}</li>
+            {% else %}
+            <li>{{math.course_name.title}} in {{math.department}}</li>
             {% endif %}
             {% endfor %}
         </ul>

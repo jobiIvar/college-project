@@ -17,17 +17,28 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.contrib.auth.models import User
+from rest_framework import routers, serializers, viewsets
+from credentials import views
 
+# Serializers define the API representation.
+
+
+# Routers provide an easy way of automatically determining the URL conf.
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('myapi', include(router.urls)),
     path('credentials/', include('credentials.urls')),
     path('contact/', include('contact.urls')),
     path('facilities/', include('facilities.urls')),
     path('admission/', include('admission.urls')),
     path('academics/', include('academics.urls')),
     path('administration/', include('administration.urls')),
-    path('aboutus/', include('aboutus.urls'))
+    path('aboutus/', include('aboutus.urls')),
+    path('api-auth/', include('rest_framework.urls'))
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

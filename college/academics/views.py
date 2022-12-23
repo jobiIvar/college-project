@@ -12,8 +12,27 @@ def academics(request):
 
 
 def course(request):
-    courses = Courses.objects.all()
-    context = {"courses": courses}
+    mathematics = Courses.objects.filter(department__name="Mathematics")
+    physics = Courses.objects.filter(department__name="Physics")
+    tamil = Courses.objects.filter(department__name="Tamil")
+    english = Courses.objects.filter(department__name="English")
+    commerce = Courses.objects.filter(department__name="Commerce")
+    business_administration = Courses.objects.filter(department__name="Business Administration")
+    computer_science = Courses.objects.filter(department__name="Computer Science")
+    zoology = Courses.objects.filter(department__name="Zoology")
+    social_works = Courses.objects.filter(department__name="Social Works")
+    physical_education = Courses.objects.filter(department__name="Physical Education")
+    context = {'mathematics': mathematics,
+               "physics": physics,
+               "tamil": tamil,
+               "english": english,
+               "commerce": commerce,
+               "business_administration": business_administration,
+               "computer_science": computer_science,
+               "zoology": zoology,
+               "social_works": social_works,
+               "physical_education": physical_education
+               }
     return render(request, 'academics.html', context)
 
 

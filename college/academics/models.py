@@ -46,7 +46,6 @@ class Courses(models.Model):
     def __str__(self):
         if not self.session_name:
             return f"{self.course_name} in {self.department}".upper()
-
         else:
             return f"{self.course_name} of {self.session_name} in {self.department}".upper()
 

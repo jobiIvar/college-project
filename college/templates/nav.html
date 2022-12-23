@@ -42,11 +42,11 @@
     Admission
   </a>
   <ul class="dropdown-menu dropdown-menu-dark">
-    <li><a class="dropdown-item" href="{% url 'admission:admission' %}">UG</a></li>
-    <li><a class="dropdown-item" href="{% url 'admission:admission' %}">PG</a></li>
+    <li><a class="dropdown-item" href="{% url 'admission:ug_admission' %}">UG</a></li>
+    <li><a class="dropdown-item" href="{% url 'admission:pg_admission' %}">PG</a></li>
       <li><hr class="dropdown-divider"></li>
-      <li><a class="dropdown-item" href="{% url 'admission:admission' %}">M.Phil</a></li>
-    <li><a class="dropdown-item" href="{% url 'admission:admission' %}">Ph.D</a></li>
+      <li><a class="dropdown-item" href="{% url 'admission:pg_admission' %}">M.Phil</a></li>
+    <li><a class="dropdown-item" href="{% url 'admission:pg_admission' %}">Ph.D</a></li>
   </ul>
 </div>
       </li>
@@ -74,9 +74,14 @@
       </li>
     </ul>
     <div class="nav-sign">
-        {% if user.is_authenticated %}
-        <a>Hello {{user.username}}</a>
+        {% if user.is_staff %}
+        <a class="nav_contact_msg" href="">Contact Messages</a>
+        <a class="nav_user_greet">Hello {{user.username}}</a>
        <a href="{% url 'credentials:logout' %}" class="btn btn-danger">Logout</a>
+        {% elif user.is_authenticated %}
+
+        <a>Hello {{user.username}}</a>
+        <a href="{% url 'credentials:logout' %}" class="btn btn-danger">Logout</a>
         {% else %}
     <a onclick="cancel()" href="{% url 'credentials:signin' %}" class="signBtn btn btn-success">Login</a>
     <a href="{% url 'credentials:signup' %}" class="signBtn btn btn-warning">Register</a>
